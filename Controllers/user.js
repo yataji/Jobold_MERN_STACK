@@ -33,14 +33,14 @@ exports.signup = (req, res, next) => {
           port: 587,
           secure: false,
           auth: {
-            user: "yassinoubil3@gmil.com",
-            pass: "www.1996633607219100705pamA",
+            user: "your mail",
+            pass: "your password",
           },
         });
 
         transporter
           .sendMail({
-            from: "yassinoubil3@gmail.com",
+            from: "your mail",
             to: user.email,
             subject: "Confirm your email",
             text: `Please use the following code to confirm your email: ${confirmationCode}`,
@@ -51,8 +51,8 @@ exports.signup = (req, res, next) => {
             // Connect to IMAP server and search for confirmation email
             const config = {
               imap: {
-                user: "yassinoubil3@gmail.com",
-                password: "www.1996633607219100705pamA",
+                user: "your mail",
+                password: "your password",
                 host: "imap.gmail.com",
                 port: 993,
                 tls: true,
@@ -62,7 +62,7 @@ exports.signup = (req, res, next) => {
 
             imaps.connect(config).then((connection) => {
               const searchCriteria = {
-                from: "yassinoubil3@gmail.com",
+                from: "your mail",
                 subject: "Confirm your email",
               };
               const fetchOptions = {
@@ -143,7 +143,7 @@ exports.signup = (req, res, next) => {
 //             port: 465,
 //             secure: true,
 //             auth: {
-//               user: "yassinoubil3@yahoo.com",
+//               user: "your mail",
 //               pass: "www.199663360721910705pama",
 //             },
 //           });
@@ -151,7 +151,7 @@ exports.signup = (req, res, next) => {
 //           // send a confirmation email
 //           transporter
 //             .sendMail({
-//               from: "yassinoubil3@yahoo.com",
+//               from: "your mail",
 //               to: user.email,
 //               subject: "Confirm your email",
 //               text: `Please use the following code to confirm your email: ${confirmationCode}`,
@@ -163,7 +163,7 @@ exports.signup = (req, res, next) => {
 //             });
 //             const config = {
 //               imap: {
-//                 user: "yassinoubil3@yahoo.com",
+//                 user: "your mail",
 //                 password: "www.199663360721910705pama",
 //                 host: "imap.mail.yahoo.com",
 //                 port: 993,
@@ -176,7 +176,7 @@ exports.signup = (req, res, next) => {
 //             .then((connection) => {
 //               // search for the confirmation email
 //               const searchCriteria = {
-//                 from: "yassinoubil3@yahoo.com",
+//                 from: "your mail",
 //                 subject: "Confirm your email",
 //               };
 //               const fetchOptions = {
