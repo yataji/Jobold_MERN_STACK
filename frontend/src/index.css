@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.btn-01 {
+    @apply bg-[#EDF0F3] text-black/[.5] font-normal text-sm rounded-full mt-5 p-2;
+}
+
+.placeholder-poppins::placeholder {
+    @apply font-poppins;
+}
+
+.otp-input {
+    @apply rounded-full w-20 h-20 border-4 border-[#6610F2] font-medium text-5xl text-center text-[#6610F2] font-poppins caret-[#418DFD];
+    width: 5rem !important;
+}

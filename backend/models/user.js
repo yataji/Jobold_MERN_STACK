@@ -1,9 +1,11 @@
 const mongoose = require("mongoose");
-const findOrCreate = require("mongoose-findorcreate");
+const UniqueValidator = require("mongoose-unique-validator");
+
 const userSchema = mongoose.Schema(
   {
     firstName: {
       type: String,
+      required: true,
     },
     middleName: {
       type: String,
@@ -13,37 +15,59 @@ const userSchema = mongoose.Schema(
     },
     phoneNumber: {
       type: String,
+      default: null,
     },
     email: {
       type: String,
-      // required: true,
+      unique: true,
     },
     password: {
       type: String,
+      default: null,
     },
     gender: {
       type: String,
-      // required: true,
+      default: null,
     },
     country: {
       type: String,
-      // required: true,
+      default: null,
     },
     city: {
       type: String,
-      // required: true,
+      default: null,
     },
     streetAddress: {
       type: String,
-      // required: true,
+      default: null,
     },
     secondStreetAddress: {
       type: String,
-      // required: false,
+      default: null,
     },
     zipCode: {
       type: Number,
-      // required: true,
+      default: null,
+    },
+    profilType: {
+      type: String,
+      default: null,
+    },
+    googleId: {
+      type: String,
+      default: null,
+    },
+    request_id: {
+      type: String,
+      default: null,
+    },
+    numberVerified: {
+      type: Boolean,
+      default: false,
+    },
+    emailVerified: {
+      type: Boolean,
+      default: false,
     },
   },
   {
@@ -51,5 +75,6 @@ const userSchema = mongoose.Schema(
   }
 );
 
-userSchema.plugin(findOrCreate);
+userSchema.plugin(UniqueValidator);
+
 module.exports = mongoose.model("User", userSchema);
